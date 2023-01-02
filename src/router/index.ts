@@ -13,23 +13,23 @@ const routes = [
     path: '/article/:id',
     name: 'Article',
     component: Article,
-    beforeEnter: (to, _, next) => {
-      const { id } = to.params
+    // beforeEnter: (to, _, next) => {
+    //   const { id } = to.params
 
-      if(Array.isArray(id)){
-        next({ path: '/error'});
-        return 
-      };
+    //   if(Array.isArray(id)){
+    //     next({ path: '/error'});
+    //     return 
+    //   };
 
-      //Is a valid article id
-      const index: number = parseInt(id);
-      if(index < 0 || index >= shortArticles.length){
-        next({ path: '/error'});
-        return 
-      };
+    //   //Is a valid article id
+    //   const index: number = parseInt(id);
+    //   if(index < 0 || index >= shortArticles.length){
+    //     next({ path: '/error'});
+    //     return 
+    //   };
 
-      next();
-    }
+    //   next();
+    // }
   }
 ]
 
