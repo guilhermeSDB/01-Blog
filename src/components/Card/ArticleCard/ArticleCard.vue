@@ -1,5 +1,5 @@
 <template>
-  <article class="bg-white rounded-md shadow-md mx-5 my-[25px] p-4 lg:mx-0 lg:my-[50px]">
+  <article class="bg-white rounded-md shadow-md mx-5 my-[25px] p-4 lg:mx-0 lg:my-[50px] transition-all">
     <div class="flex items-center justify-between">
       <time class="text-sm text-[#717171]">{{ props.data.date }}</time>
       <i 

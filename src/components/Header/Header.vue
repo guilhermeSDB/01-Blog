@@ -23,8 +23,12 @@
 <script setup lang=ts>
 import Search from '../Common/Search/Search.vue';
 
-function onChangeValue(valor: string){
-  console.log(valor);
+const emit = defineEmits<{
+  (e: 'onInput', value: string ): void
+}>();
+
+function onChangeValue(value: string){
+  emit('onInput', value)
 }
 
 </script>

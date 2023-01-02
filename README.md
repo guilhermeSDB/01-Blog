@@ -10,7 +10,7 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [ ] Filtro de Noticiais
+- [x] Filtro de Noticias
 - [ ] API de Noticias
 - [ ] Rolagem Infinita.
 - [x] Ajustar Documentação.
