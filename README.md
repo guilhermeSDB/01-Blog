@@ -15,6 +15,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Skeleton Loading
 - [ ] Rolagem Infinita.
 - [x] Ajustar Documentação.
+- [ ] Salvar Favorito no Gerenciamento de Estado Global.
+- [ ] Adicionar Artigos no Gerenciamento de Estado Global.
 
 ## 💻 Pré-requisitos
 
