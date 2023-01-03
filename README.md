@@ -3,7 +3,7 @@
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 
 <p align="center">
-  <img width="400" height="400" src="https://imgur.com/E8Ulqbq" alt="exemplo imagem">
+  <img width="400" height="400" src="./public/capa.png" alt="exemplo imagem">
 </p>
 
 > Desafio 01 - Blog da Codelandia.
