@@ -2,7 +2,7 @@
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 
-<img src="exemplo-image.png" alt="exemplo imagem">
+<img src="https://imgur.com/E8Ulqbq" alt="exemplo imagem">
 
 > Desafio 01 - Blog da Codelandia.
 
@@ -11,7 +11,8 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Filtro de Noticias
-- [ ] API de Noticias
+- [x] API de Noticias
+- [x] Skeleton Loading
 - [ ] Rolagem Infinita.
 - [x] Ajustar Documentação.
 

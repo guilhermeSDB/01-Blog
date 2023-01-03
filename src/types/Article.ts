@@ -1,6 +1,11 @@
 export interface Article {
-  id: number,
+  author: string,
   date: string,
+  time: string,
+  id: string,
   title: string,
-  description: string,
+  content: string,
+  imageUrl: string,
+  readMoreUrl: string,
+  url?: string,
 } 

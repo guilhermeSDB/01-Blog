@@ -17,7 +17,7 @@
       {{ props.data.title }}
     </h2>
     <p class="text-sm text-[#717171] leading-[26px]">
-      {{ props.data.description }}
+      {{ props.data.content }}
     </p>
   </article>  
 </template>
