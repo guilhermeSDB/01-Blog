@@ -8,7 +8,7 @@
 
       <ul v-if="isLoadingShortArticles">
         <li 
-          v-for="(item, index) in 3" 
+          v-for="(item, index) in 4" 
           :key="index" 
           class="bg-white border border-blue-300 shadow rounded-md p-6 bg-white rounded-md shadow-md mx-5 my-[25px] p-4 lg:mx-0 lg:my-[50px] transition-all"
         >
@@ -56,18 +56,18 @@
 </template>
 
 <script lang="ts" setup>
-import axios from 'axios';
 import ArticleCard from '../components/Card/ArticleCard/ArticleCard.vue';
 import Header from '../components/Header/header.vue';
 import { shortArticles } from '../assets/articles';
 import { useRouter } from 'vue-router';
 import { ref, onMounted } from 'vue';
 import { Article } from '../types/Article';
-const router = useRouter();
-// const data = ref([...shortArticles]);
-const isLoadingShortArticles = ref<boolean>(true);
+import { useArticleStore } from '../store/articles';
 
+const router = useRouter();
+const isLoadingShortArticles = ref<boolean>(true);
 const data = ref<Article[]>([]);
+const articleStore = useArticleStore();
 
 function goToArticle(id: number){
   router.push({ path: `/article/${id}`})
@@ -76,19 +76,20 @@ function goToArticle(id: number){
 async function getArticles(){
   isLoadingShortArticles.value = true;
 
-  const response = await axios.get('https://inshorts.deta.dev/news?category=science');
-  data.value = response.data.data;
+  await articleStore.getArticles();
+
+  data.value = articleStore.listOfArticles;
 
   isLoadingShortArticles.value = false;
 }
 
 function searchArticle(search: string){
   if(search.length > 1){
-    data.value = shortArticles.filter(item => {
+    data.value = articleStore.listOfArticles.filter(item => {
       return item.title.toLowerCase().includes(search.toLowerCase());
     })
   }else{
-    data.value = [...shortArticles];
+    data.value = [...articleStore.listOfArticles];
   }
 }
 

@@ -10,7 +10,14 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue';
+import { useFavoriteStore } from './store/favorites';
 
+const favorites = useFavoriteStore();
+
+onMounted(() => {
+  favorites.getFavorites();
+})
 </script>
 
 <style>

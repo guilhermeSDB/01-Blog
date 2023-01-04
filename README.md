@@ -14,10 +14,11 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Filtro de Noticias
 - [x] API de Noticias
 - [x] Skeleton Loading
-- [ ] Rolagem Infinita.
 - [x] Ajustar Documentação.
-- [ ] Salvar Favorito no Gerenciamento de Estado Global.
-- [ ] Adicionar Artigos no Gerenciamento de Estado Global.
+- [x] Salvar Favoritos no Gerenciamento de Estado Global.
+- [x] Carregar Artigos no Gerenciamento de Estado Global.
+- [ ] Rolagem Infinita.
+- [ ] Listar Favoritos.
 
 ## 💻 Pré-requisitos
 

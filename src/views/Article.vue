@@ -34,12 +34,13 @@
 
 <script setup lang="ts">
 import { ref, computed, ComputedRef } from 'vue';
-import { shortArticles } from '../assets/articles';
 import { useRoute } from 'vue-router';
 import { Article } from '../types/Article';
 import type { Ref } from 'vue';
+import { useArticleStore } from '../store/articles';
 
 const route = useRoute();
+const articlesStore = useArticleStore();
 const articleId = computed(() => route.params.id) as ComputedRef<string>;
 const data: Ref<Article> = ref({
   author: '',
@@ -50,10 +51,11 @@ const data: Ref<Article> = ref({
   content: '',
   imageUrl: '',
   readMoreUrl: '',
+  url: '',
 });
 
 if(articleId.value){
-  const response: Article | undefined = shortArticles.find(x => x.id == articleId.value);
+  const response: Article | undefined = articlesStore.listOfArticles.find(x => x.id == articleId.value);
 
   if (response) {
     data.value = response;

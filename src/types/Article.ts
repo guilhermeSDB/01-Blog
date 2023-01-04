@@ -7,5 +7,5 @@ export interface Article {
   content: string,
   imageUrl: string,
   readMoreUrl: string,
-  url?: string,
+  url: string,
 } 

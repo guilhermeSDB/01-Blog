@@ -25,20 +25,30 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { Ref } from 'vue';
+import { useFavoriteStore } from '../../../store/favorites';
 
 const emit = defineEmits<{
   (e: 'onClick', value: number ): void
 }>();
 
-const isFavorite: Ref<boolean> = ref(false);
-
 const props = defineProps({
   data: { type: Object, required: true },
 })
 
+const store = useFavoriteStore();
+const isFavorite: Ref<boolean> = ref(store.isFavorite(props.data.title));
+
 function handleToggleFavorite(){
+
+  if(isFavorite.value){
+    store.removeFavorites(props.data.title);
+  }else{
+    store.addFavorites(props.data.title);
+  }
+
   isFavorite.value = !isFavorite.value;
 }
+
 
 function handleClickTitle(id: number){
   emit('onClick', id);
