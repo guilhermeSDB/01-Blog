@@ -11,15 +11,15 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [x] Filtro de Noticias
-- [x] API de Noticias
-- [x] Skeleton Loading
-- [x] Ajustar Documentação.
-- [x] Salvar Favoritos no Gerenciamento de Estado Global.
-- [x] Carregar Artigos no Gerenciamento de Estado Global.
+- [x] Barra de Pesquisa
+- [x] API de Noticias.
+- [x] Carregamento dos Artigos com formato de Esqueleto (Skeleton Loading).
+- [x] Ajuste na Documentação.
+- [x] Favoritos no Gerenciamento de Estado Global.
+- [x] Artigos no Gerenciamento de Estado Global.
 - [ ] Rolagem Infinita.
-- [ ] Listar Favoritos.
-- [ ] Adicionar Filtro para Listar Artigos.
+- [ ] Lista de Favoritos.
+- [ ] Filtro.
 
 ## 💻 Pré-requisitos
 
