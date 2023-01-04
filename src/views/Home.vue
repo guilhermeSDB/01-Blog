@@ -57,8 +57,7 @@
 
 <script lang="ts" setup>
 import ArticleCard from '../components/Card/ArticleCard/ArticleCard.vue';
-import Header from '../components/Header/header.vue';
-import { shortArticles } from '../assets/articles';
+import Header from '../components/Header/Header.vue';
 import { useRouter } from 'vue-router';
 import { ref, onMounted } from 'vue';
 import { Article } from '../types/Article';
