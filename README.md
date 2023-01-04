@@ -17,7 +17,6 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Ajuste na Documentação.
 - [x] Favoritos no Gerenciamento de Estado Global.
 - [x] Artigos no Gerenciamento de Estado Global.
-- [ ] Rolagem Infinita.
 - [ ] Lista de Favoritos.
 - [ ] Filtro.
 
