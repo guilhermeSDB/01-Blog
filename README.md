@@ -2,7 +2,7 @@
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 <p align="center">
-  <img style="border-radius:20px" width="1000" height="400" src="public/capa.png" alt="exemplo imagem">
+  <img style="border-radius:10%" width="1000" height="400" src="public/capa.png" alt="exemplo imagem">
 </p>
 
 > Desafio 01 - Blog da Codelandia.
