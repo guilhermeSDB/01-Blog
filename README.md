@@ -19,6 +19,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Carregar Artigos no Gerenciamento de Estado Global.
 - [ ] Rolagem Infinita.
 - [ ] Listar Favoritos.
+- [ ] Adicionar Filtro para Listar Artigos.
 
 ## 💻 Pré-requisitos
 
