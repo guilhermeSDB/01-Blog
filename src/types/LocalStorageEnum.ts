@@ -1,3 +1,3 @@
 export enum LocalStorageEnum{
-    FAVORITES = '@blog:favorites';
+    FAVORITES = '@blog:favorites',
 };
