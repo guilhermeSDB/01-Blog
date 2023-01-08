@@ -94,6 +94,7 @@ async function loadArticle(){
       if(response){
 
         article.value = response
+        isLoadingArticle.value = false;
 
       }else{
         
