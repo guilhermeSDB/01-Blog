@@ -13,7 +13,7 @@
       >
       </i>
     </div>
-    <h2 v-on:click="handleClickTitle(props.data.id)" class="text-lg text-[#1A202C] mt-[27px] mb-[9px] cursor-pointer hover:underline">
+    <h2 v-on:click="handleClickTitle(props.data.title)" class="text-lg text-[#1A202C] mt-[27px] mb-[9px] cursor-pointer hover:underline">
       {{ props.data.title }}
     </h2>
     <p class="text-sm text-[#717171] leading-[26px]">
@@ -23,12 +23,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import type { Ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useFavoriteStore } from '../../../store/favorites';
 
 const emit = defineEmits<{
-  (e: 'onClick', value: number ): void
+  (e: 'onClick', value: string ): void
 }>();
 
 const props = defineProps({
@@ -36,7 +35,7 @@ const props = defineProps({
 })
 
 const store = useFavoriteStore();
-const isFavorite: Ref<boolean> = ref(store.isFavorite(props.data.title));
+const isFavorite = computed(()=> store.isFavorite(props.data.title))
 
 function handleToggleFavorite(){
 
@@ -45,13 +44,11 @@ function handleToggleFavorite(){
   }else{
     store.addFavorites(props.data.title);
   }
-
-  isFavorite.value = !isFavorite.value;
 }
 
 
-function handleClickTitle(id: number){
-  emit('onClick', id);
+function handleClickTitle(title: string){
+  emit('onClick', title);
 }
 
 </script>

@@ -2,15 +2,16 @@
   <div>
     <Header
       @onInput="searchArticle"
+      @handleOpenFavorites="isOpenFavorites = true"
     />
 
-    <div class="lg:max-w-[900px] mx-auto mb-[25px] lg:mb-[50px] relative">
+    <div class="lg:max-w-[900px] mx-auto mb-[25px] lg:mb-[35px] relative">
 
-      <ul v-if="isLoadingShortArticles">
+      <ul v-if="isLoadingListOfArticles">
         <li 
           v-for="(item, index) in 4" 
           :key="index" 
-          class="bg-white border border-blue-300 shadow rounded-md p-6 bg-white rounded-md shadow-md mx-5 my-[25px] p-4 lg:mx-0 lg:my-[50px] transition-all"
+          class="border border-blue-300 bg-white rounded-md shadow-md mx-5 my-[25px] p-4 lg:mx-0 lg:my-[50px] transition-all"
         >
           <div class="animate-pulse flex space-x-4">
   
@@ -34,61 +35,81 @@
         </li>
       </ul>
 
-      <ul v-if="data.length > 0">
+      <ul v-if="listOfArticles.length > 0">
         <li
-          v-for="shortArticle in data" 
+          v-for="shortArticle in listOfArticles" 
           :key="shortArticle.id"
         >
         <TransitionGroup name="projects">
           <ArticleCard  
-            @onClick="goToArticle"
+            @onClick="handleGoToArticle"
             :data='shortArticle' 
           />
         </TransitionGroup>
         </li>
       </ul>
   
-      <div v-else-if="data.length === 0 && isLoadingShortArticles === false" class="h-40 flex items-center justify-center">
+      <div v-else-if="listOfArticles.length === 0 && isLoadingListOfArticles === false" class="h-40 flex items-center justify-center">
         <p>Nenhum Artigo Encontrado</p>
       </div>
     </div>
+
+    <transition 
+      enter="duration-300 ease-out"
+      enter-from="opacity-0 scale-95"
+      enter-to="opacity-100 scale-100"
+      leave="duration-200 ease-in"
+      leave-from="opacity-100 scale-100"
+      leave-to="opacity-0 scale-95"
+      >
+      <Favorite 
+        :isOpen="isOpenFavorites" 
+        @onClose="isOpenFavorites = false" 
+        :data="favoriteArticles"
+      />
+    </transition>
   </div>
 </template>
 
 <script lang="ts" setup>
 import ArticleCard from '../components/Card/ArticleCard/ArticleCard.vue';
 import Header from '../components/Header/Header.vue';
-import { useRouter } from 'vue-router';
-import { ref, onMounted } from 'vue';
+import Favorite from '../components/Modal/Favorite/Favorite.vue';
+import { ref, onMounted, computed } from 'vue';
 import { Article } from '../types/Article';
 import { useArticleStore } from '../store/articles';
+import { useFavoriteStore } from '../store/favorites';
+import { goToArticle } from '../utils/goToArticle';
 
-const router = useRouter();
-const isLoadingShortArticles = ref<boolean>(true);
-const data = ref<Article[]>([]);
+const isLoadingListOfArticles = ref<boolean>(true);
+const listOfArticles = ref<Article[]>([]);
 const articleStore = useArticleStore();
+const isOpenFavorites = ref<boolean>(false);
+const favoriteStore = useFavoriteStore();
+const favoriteArticles = computed(()=> favoriteStore.listOfFavorites);
 
-function goToArticle(id: number){
-  router.push({ path: `/article/${id}`})
+
+function handleGoToArticle(title: string){
+  goToArticle(title);
 }
 
 async function getArticles(){
-  isLoadingShortArticles.value = true;
+  isLoadingListOfArticles.value = true;
 
   await articleStore.getArticles();
 
-  data.value = articleStore.listOfArticles;
+  listOfArticles.value = articleStore.listOfArticles;
 
-  isLoadingShortArticles.value = false;
+  isLoadingListOfArticles.value = false;
 }
 
 function searchArticle(search: string){
   if(search.length > 1){
-    data.value = articleStore.listOfArticles.filter(item => {
+    listOfArticles.value = articleStore.listOfArticles.filter(item => {
       return item.title.toLowerCase().includes(search.toLowerCase());
     })
   }else{
-    data.value = [...articleStore.listOfArticles];
+    listOfArticles.value = [...articleStore.listOfArticles];
   }
 }
 

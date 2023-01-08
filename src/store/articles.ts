@@ -13,7 +13,7 @@ export const useArticleStore = defineStore('articles', {
         async getArticles(){
             if(this.listOfArticles.length === 0){
                 try {
-                    const response = await axios.get('https://inshorts.deta.dev/news?category=science');
+                    const response = await axios.get('https://inshorts.deta.dev/news?category=technology');
                     this.listOfArticles = response.data.data;
                 } catch (error) {
                     console.log(error);

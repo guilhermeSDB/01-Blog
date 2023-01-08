@@ -18,7 +18,6 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Favoritos no Gerenciamento de Estado Global.
 - [x] Artigos no Gerenciamento de Estado Global.
 - [ ] Lista de Favoritos.
-- [ ] Filtro.
 
 ## 💻 Pré-requisitos
 

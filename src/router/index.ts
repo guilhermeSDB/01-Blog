@@ -10,7 +10,7 @@ const routes = [
     component: Home,
   },
   {
-    path: '/article/:id',
+    path: '/article/:title',
     name: 'Article',
     component: Article,
     // beforeEnter: (to, _, next) => {

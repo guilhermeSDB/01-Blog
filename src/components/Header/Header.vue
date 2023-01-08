@@ -5,8 +5,12 @@
         <div>
           Codêlandia
         </div>
-        <div>
-          blog
+        <div class="flex items-center gap-3">
+          <span v-on:click="handleOpenFavorites" class="transition-all cursor-pointer hover:underline">Favoritos</span>
+
+          <hr class="border-[.1px] border-gray-200 w-[.1px] h-4 rounded-full">
+
+          <span>blog</span>
         </div>
       </div>
   
@@ -24,11 +28,16 @@
 import Search from '../Common/Search/Search.vue';
 
 const emit = defineEmits<{
-  (e: 'onInput', value: string ): void
+  (e: 'onInput', value: string ): void,
+  (e: 'handleOpenFavorites' ): void,
 }>();
 
 function onChangeValue(value: string){
   emit('onInput', value)
+}
+
+function handleOpenFavorites(){
+  emit('handleOpenFavorites');
 }
 
 </script>
