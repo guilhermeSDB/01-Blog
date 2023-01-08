@@ -48,6 +48,8 @@ import { useArticleStore } from '../store/articles';
 import { Article } from '../types/Article';
 import { useFavoriteStore } from '../store/favorites';
 
+debugger
+
 const route = useRoute();
 const articleStore = useArticleStore();
 const favoriteStore = useFavoriteStore();
@@ -77,6 +79,8 @@ function findArticleInFavoriteList(){
   if(articleFound){
     article.value = articleFound
   }
+
+  isLoadingArticle.value = false;
 }
 
 async function loadArticle(){
@@ -100,8 +104,6 @@ async function loadArticle(){
     }else{
       getArticle();
     }
-
-    isLoadingArticle.value = false;
   }
 }
 
@@ -113,6 +115,8 @@ async function getArticle(){
   if(response){
     article.value = response
   }
+
+  isLoadingArticle.value = false;
 }
 
 onMounted(() => {
