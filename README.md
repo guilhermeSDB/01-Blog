@@ -25,9 +25,9 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 <!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
 * NPM.
 
-## 🚀 Instalando <Blog>
+## 🚀 Instalando Blog
 
-Para instalar o <Blog>, siga estas etapas:
+Para instalar o Blog, siga estas etapas:
 
 
 Clone este repositório
@@ -40,9 +40,9 @@ Instale as dependencias
 npm install 
 ```
 
-## ☕ Usando <Blog>
+## ☕ Usando Blog
 
-Para usar <Blog>, siga estas etapas:
+Para usar Blog, siga estas etapas:
 
 ```
 npm run dev
