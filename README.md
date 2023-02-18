@@ -19,6 +19,14 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Artigos no Gerenciamento de Estado Global.
 - [x] Lista de Favoritos.
 
+### [Ver Preview](https://desafio-blog-codelandia.netlify.app/)
+
+## 👨🏻‍💻 Techs 
+
+ <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=html,tailwindcss,vue,typescript" />
+</a>
+
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
